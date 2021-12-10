@@ -16,7 +16,7 @@ class Map
 {
   constructor()
   {
-    this.TIP_NUM = 6;
+    this.TIP_NUM = 7;
     this.SIZE_X = 240;
     this.SIZE_Y = 135;
     this.imgMap = null;
@@ -75,6 +75,9 @@ class Map
         } else if ( r==128 && g==0 && b==0 )//mountain
         {
           this.mapTip[x][y].img = this.imgTip[4];
+        } else if ( r==255 && g==255 && b==255 )//sanctuary
+        {
+          this.mapTip[x][y].img = this.imgTip[6];
         } else // grass
         {
           this.mapTip[x][y].img = this.imgTip[0];
