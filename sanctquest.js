@@ -15,6 +15,7 @@ let BASE_SCREEN_WIDTH = 256;
 let BASE_SCREEN_HEIGHT = 224;
 let BASE_DISPLAY_WIDTH = 960;
 let BASE_DISPLAY_HEIGHT = 540;
+let BASE_MAPTIP_SIZE = 16;
 
 let keyLeft = false;
 let keyRight = false;
@@ -22,6 +23,7 @@ let keyDown = false;
 let keyUp = false;
 
 let g_player;
+let g_map;
 
 //-------------------------------------------------------------------------
 // preload
@@ -31,6 +33,8 @@ function preload()
 {
   g_player = new Player();
   g_player.setup();
+  g_map = new Map();
+  g_map.setup();
 }
 
 //-------------------------------------------------------------------------
@@ -67,6 +71,8 @@ function setup()
   noSmooth();
 
   frameRate( 30 );
+  
+  g_map.create();
 }
 
 //-------------------------------------------------------------------------

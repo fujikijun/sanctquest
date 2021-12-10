@@ -13,7 +13,7 @@ class Player
     this.direction = 0;
     this.frame = 0;
     this.frameSpeed = 0.05;
-    this.speed = 2;
+    this.speed = 20;
     this.m_imgPlayer = [];
   }
 
@@ -23,8 +23,8 @@ class Player
 
   setup()
   {
-    this.x = 0;//BASE_SCREEN_WIDTH / 2;
-    this.y = 0;//BASE_SCREEN_HEIGHT / 2;
+    this.x = 275 * BASE_MAPTIP_SIZE;
+    this.y = 159 * BASE_MAPTIP_SIZE;
     this.direction = 0;
     this.frame = 0;
     for ( let i=0; i<4; i++ )
@@ -92,6 +92,7 @@ class Player
 
   draw()
   {
-    image( this.m_imgPlayer[this.direction][int(this.frame*2)], this.x, this.y );
+    g_map.draw( this.x, this.y );
+    image( this.m_imgPlayer[this.direction][int(this.frame*2)], 0, 0 );
   }
 }
