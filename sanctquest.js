@@ -13,8 +13,8 @@ let smafo = false;
 
 let BASE_SCREEN_WIDTH = 256;
 let BASE_SCREEN_HEIGHT = 224;
-let BASE_DISPLAY_WIDTH = 960;
-let BASE_DISPLAY_HEIGHT = 540;
+let BASE_DISPLAY_WIDTH = 960*0.75;
+let BASE_DISPLAY_HEIGHT = 540*0.75;
 let BASE_MAPTIP_SIZE = 16;
 
 let keyLeft = false;
@@ -43,7 +43,7 @@ function preload()
 
 function setup()
 {
-  canvas = createCanvas( windowWidth, windowHeight, WEBGL );  
+  canvas = createCanvas( windowWidth, windowHeight );
   canvas.style('z-index', '-1');
   canvas.style('position', 'fixed');
   canvas.style('top', '0');
@@ -97,6 +97,7 @@ function draw()
   }
 
   //translate( (float(windowWidth)-w*float(BASE_SCREEN_WIDTH))/2, (float(windowHeight)-h*float(BASE_SCREEN_HEIGHT))/2 );
+  translate( windowWidth/2, windowHeight/2 );
   scale( w, h );
 
   g_player.update();
@@ -173,7 +174,7 @@ function windowResized()
     return;
   }
 
-  canvas = createCanvas( windowWidth, windowHeight, WEBGL );
+  canvas = createCanvas( windowWidth, windowHeight );
   canvas.style('z-index', '-1');
   if ( smafo == false )
   {

@@ -89,24 +89,27 @@ class Map
 
   draw( px, py )
   {
+    fill( 255 );
+    noStroke();
+
     for ( let y=0; y<this.SIZE_Y; y++ )
     {
       for ( let x=0; x<this.SIZE_X; x++ )
       {          
 
-        if ( x < int(px)/BASE_MAPTIP_SIZE-28-(BASE_SCREEN_WIDTH/2)/BASE_MAPTIP_SIZE )
+        if ( x < int(px)/BASE_MAPTIP_SIZE-24 )
         {
           continue;
         }
-        if ( x > int(px)/BASE_MAPTIP_SIZE+28-(BASE_SCREEN_WIDTH/2)/BASE_MAPTIP_SIZE )
+        if ( x > int(px)/BASE_MAPTIP_SIZE+24 )
         {
           continue;
         }
-        if ( y < int(py)/BASE_MAPTIP_SIZE-16-(BASE_SCREEN_HEIGHT/2)/BASE_MAPTIP_SIZE )
+        if ( y < int(py)/BASE_MAPTIP_SIZE-14 )
         {
           continue;
         }
-        if ( y > int(py)/BASE_MAPTIP_SIZE+16-(BASE_SCREEN_HEIGHT/2)/BASE_MAPTIP_SIZE )
+        if ( y > int(py)/BASE_MAPTIP_SIZE+14 )
         {
           continue;
         }
