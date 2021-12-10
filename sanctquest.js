@@ -90,8 +90,7 @@ function draw()
     h =  r2;
   }
 
-  translate( -windowWidth/2, -windowHeight/2 );
-  translate( (float(windowWidth)-w*float(BASE_SCREEN_WIDTH))/2, (float(windowHeight)-h*float(BASE_SCREEN_HEIGHT))/2 );
+  //translate( (float(windowWidth)-w*float(BASE_SCREEN_WIDTH))/2, (float(windowHeight)-h*float(BASE_SCREEN_HEIGHT))/2 );
   scale( w, h );
 
   g_player.update();

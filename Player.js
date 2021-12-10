@@ -23,8 +23,8 @@ class Player
 
   setup()
   {
-    this.x = BASE_SCREEN_WIDTH / 2;
-    this.y = BASE_SCREEN_HEIGHT / 2;
+    this.x = 0;//BASE_SCREEN_WIDTH / 2;
+    this.y = 0;//BASE_SCREEN_HEIGHT / 2;
     this.direction = 0;
     this.frame = 0;
     for ( let i=0; i<4; i++ )
