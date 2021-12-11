@@ -186,9 +186,6 @@ function updateOrientation()
 
 function windowResized() 
 {   
-  alert( " "+windowWidth+", "+windowHeight);
-
-
   let userAgent = window.navigator.userAgent.toLowerCase();
   if (userAgent.indexOf('iphone') != -1) {
     smafo = true;
