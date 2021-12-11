@@ -67,8 +67,11 @@ function preload()
 
 function setup()
 {
-  window.addEventListener('orientationchange', updateOrientation, false);
-  
+  window.addEventListener("orientationchange", function() {
+    resize();
+  }
+  );
+
   canvas = createCanvas( windowWidth, windowHeight );
   canvas.style('z-index', '-1');
   canvas.style('position', 'fixed');
@@ -97,7 +100,7 @@ function setup()
   noSmooth();
 
   frameRate( 30 );
-  
+
   g_map.create();
 }
 
