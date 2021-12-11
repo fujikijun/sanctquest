@@ -174,6 +174,11 @@ function keyReleased()
 // resize
 //-------------------------------------------------------------------------
 
+function orientationchange()
+{
+  resize();
+}
+
 function resize() 
 { 
   let userAgent = window.navigator.userAgent.toLowerCase();
