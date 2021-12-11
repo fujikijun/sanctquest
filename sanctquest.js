@@ -208,6 +208,8 @@ function windowResized()
     return;
   }
 
+  resizeCanvas( windowWidth, windowHeight );
+/*
   canvas = createCanvas( windowWidth, windowHeight );
   canvas.style('z-index', '-1');
   if ( smafo == false )
@@ -216,7 +218,7 @@ function windowResized()
   }
   canvas.style('top', '0');
   canvas.style('left', '0');
-
+*/
   noSmooth();
   frameRate( 30 );
 }
