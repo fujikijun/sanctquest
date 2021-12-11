@@ -26,6 +26,30 @@ let g_player;
 let g_map;
 
 //-------------------------------------------------------------------------
+// convCoordinate
+//-------------------------------------------------------------------------
+
+function getFieldXfromReal( px )
+{
+  return map( px, 26.09148313600168, 44.341514285056554, 118, 321 );
+}
+
+function getFieldXfromReal( py )
+{
+  return map( py, 145.3357675927165, 127.66614246994807, 140, 397 );
+}
+
+function getRealXfromField( px )
+{
+  return map( px, 118, 321, 26.09148313600168, 44.341514285056554 );
+}
+
+function getRealYfromField( py )
+{
+  return map( py, 140, 397, 145.3357675927165, 127.66614246994807 );
+}
+
+//-------------------------------------------------------------------------
 // preload
 //-------------------------------------------------------------------------
 
@@ -147,10 +171,10 @@ function keyReleased()
 }
 
 //-------------------------------------------------------------------------
-// windowResized
+// resize
 //-------------------------------------------------------------------------
 
-function windowResized() 
+function resize() 
 { 
   let userAgent = window.navigator.userAgent.toLowerCase();
   if (userAgent.indexOf('iphone') != -1) {

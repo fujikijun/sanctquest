@@ -151,5 +151,7 @@ class Player
   {
     g_map.draw( this.x, this.y );
     image( this.m_imgPlayer[this.direction][int(this.frame*2)], 0, 0 );
+    
+    console.log( getRealXfromField(this.x/BASE_MAPTIP_SIZE), getRealYfromField(this.y/BASE_MAPTIP_SIZE) );
   }
 }
