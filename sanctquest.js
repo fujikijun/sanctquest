@@ -67,6 +67,8 @@ function preload()
 
 function setup()
 {
+  window.addEventListener('orientationchange', updateOrientation, false);
+  
   canvas = createCanvas( windowWidth, windowHeight );
   canvas.style('z-index', '-1');
   canvas.style('position', 'fixed');
@@ -174,7 +176,7 @@ function keyReleased()
 // resize
 //-------------------------------------------------------------------------
 
-function orientationchange()
+function updateOrientation()
 {
   resize();
 }
