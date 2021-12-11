@@ -68,7 +68,7 @@ function preload()
 function setup()
 {
   window.addEventListener("orientationchange", function() {
-    resize();
+    windowResized();
   }
   );
 
@@ -184,8 +184,11 @@ function updateOrientation()
   resize();
 }
 
-function resize() 
+function windowResized() 
 { 
+  alert("test");
+  console.log("ss");
+  
   let userAgent = window.navigator.userAgent.toLowerCase();
   if (userAgent.indexOf('iphone') != -1) {
     smafo = true;
