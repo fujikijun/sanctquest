@@ -73,6 +73,8 @@ function setup()
   );
 
   canvas = createCanvas( windowWidth, windowHeight );
+  canvas.id( "canvas" );
+  canvas.style('id', 'canvas');
   canvas.style('z-index', '-1');
   canvas.style('position', 'fixed');
   canvas.style('top', '0');
@@ -186,28 +188,24 @@ function updateOrientation()
 
 function windowResized() 
 {   
-  let userAgent = window.navigator.userAgent.toLowerCase();
-  if (userAgent.indexOf('iphone') != -1) {
-    smafo = true;
-  } else if (userAgent.indexOf('ipad') != -1) {
-    smafo = true;
-  } else if (userAgent.indexOf('android') != -1) {
-    if (userAgent.indexOf('mobile') != -1) {
-      smafo = true;
-    } else {
-      smafo = true;
-    }
-  }
+  let oldcanv = document.getElementById('canvas');
+  let p = oldcanv.parentNode;
+  //console.log( oldcanv );
+  p.removeChild( oldcanv );
+
+  canvas = createCanvas( windowWidth, windowHeight );
+  canvas.id( "canvas" );
+  canvas.style('z-index', '-1');
+  canvas.style('position', 'fixed');
+  canvas.style('top', '0');
+  canvas.style('left', '0');
 
   if ( smafo == true )
   {
-    if ( canvas != null )
-    {
-      canvas.style('position', 'fixed');
-    }
+    canvas.style('position', 'scroll');
   }
-
-  resizeCanvas( windowWidth, windowHeight );
+  
+  //  resizeCanvas( windowWidth, windowHeight );
 
   noSmooth();
   frameRate( 30 );
