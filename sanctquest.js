@@ -188,6 +188,7 @@ function updateOrientation()
 
 function windowResized() 
 {   
+  /*
   let oldcanv = document.getElementById('canvas');
   let p = oldcanv.parentNode;
   //console.log( oldcanv );
@@ -204,8 +205,8 @@ function windowResized()
   {
     //canvas.style('position', 'scroll');
   }
-  
-  //  resizeCanvas( windowWidth, windowHeight );
+  */
+  resizeCanvas( windowWidth, windowHeight );
 
   noSmooth();
   frameRate( 30 );
