@@ -95,7 +95,7 @@ function setup()
 
   if ( smafo == true )
   {
-    canvas.style('position', 'scroll');
+    //canvas.style('position', 'scroll');
   }
 
   background( 127 );
@@ -202,7 +202,7 @@ function windowResized()
 
   if ( smafo == true )
   {
-    canvas.style('position', 'scroll');
+    //canvas.style('position', 'scroll');
   }
   
   //  resizeCanvas( windowWidth, windowHeight );
