@@ -22,6 +22,7 @@ class Map
     this.imgMap = null;
     this.imgTip = [];
     this.mapTip = [];
+    this.sancdata = [];
   }
 
   //----------------------------------------------------------------------------------------
@@ -35,6 +36,11 @@ class Map
       this.imgTip[i] = loadImage( "data/tip"+i+".png" );
     }
     this.imgMap = loadImage( "data/map.png" );
+
+    for ( let i=0; i<ANIME_TITLE_NUM; i++ )
+    {
+      this.sancdata[i] = loadStrings( "data/master/title/"+i+".txt" );
+    }
   }
 
   //----------------------------------------------------------------------------------------
@@ -81,6 +87,24 @@ class Map
         } else // grass
         {
           this.mapTip[x][y].img = this.imgTip[0];
+        }
+      }
+    }
+
+    for (let j = 0; j < this.sancdata.length; j++ ) 
+    {
+      let lines = this.sancdata[j];
+      for (let i = 1; i < lines.length; i++ ) 
+      {
+        let data = lines[i].split( "\t", -1 );
+        if ( data.length > 11 && data[9]>0 && data[10]>0 )
+        {
+          let b = la2xy( float(data[9]), float(data[10]) );
+          if( b[0]>=0 && b[1]>=0 && b[0]<this.SIZE_X && b[1]<this.SIZE_Y )
+          {
+            this.mapTip[int(b[0])][int(b[1])].img = this.imgTip[6];
+            console.log( i + ", " + b[0] + ", " + b[1] );
+          }
         }
       }
     }
